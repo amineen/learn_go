@@ -50,7 +50,6 @@ func removeAtIndex(s []int, index int) []int {
 		return s
 	}
 
-	// Create a new slice to avoid modifying the original
 	result := make([]int, 0, len(s)-1)
 	result = append(result, s[:index]...)
 	result = append(result, s[index+1:]...)
@@ -58,10 +57,9 @@ func removeAtIndex(s []int, index int) []int {
 }
 
 func removeElement(s []int, element int) []int {
-	// Create a new slice to avoid modifying the original
+
 	result := make([]int, 0, len(s))
 
-	// Only include elements that don't match the target element
 	for _, v := range s {
 		if v != element {
 			result = append(result, v)
